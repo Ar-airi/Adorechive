@@ -1,0 +1,366 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet">
+
+	<title>My First Web Page</title>
+
+	<style>
+		.mySlides {display:none;}
+
+		#bannerimage {
+			width: 100%;
+			background-image: url('bg0.jpg');
+			height: 150px;
+			background-position: center;
+			background-size: cover;
+			font-family: 'Mystery Quest', cursive;
+			color: #C7EEFF;
+			text-shadow: 1px 1px 3px #6A6A6A; /* Darker shadow for light colors */	
+			display: flex;
+        	justify-content: center;
+        	align-items: center;
+        	border-radius: 10px;
+        	font-size: 35;
+
+		}
+
+		body {
+			margin: 0;
+    		padding: 0;
+    		width: 100%;
+    		height: 100%;
+			color: 83c5be;
+			font-size:  30;
+			font-family: 'IM Fell English', serif;
+            text-shadow: 
+                2px 2px 3px #1a535c, /* Dark teal shadow (right-bottom) */
+                -1px -1px 2px #1a535c; /* Dark teal shadow (left-top) */
+		  
+		}
+
+		.section-bg {
+			width: 100%;
+			min-height: 100vh;
+			height: auto;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-attachment: fixed;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			text-align: center;
+			padding: 60px 20px;
+			font-size: 24px;
+			font-family: 'IM Fell English', serif;
+			text-shadow: 2px 2px 5px #000000;
+			box-sizing: border-box;
+			
+		}
+
+		.bg1 { background-image: url('bg1.jpg'); }
+		.bg2 { background-image: url('bg2.jpg'); }
+		.bg3 { background-image: url('bg3.jpg'); }
+
+		@media only screen and (max-width: 768px) {
+			.bg1 {
+				background-image: url('bg4.jpg');
+				background-attachment: scroll;
+			}
+
+			.bg2 {
+				background-image: url('bg2.5.jpg');
+				background-attachment: fixed;
+			}
+
+			.gallery {
+		        grid-template-columns: repeat(3, 1fr);
+		        gap: 8px;
+		        padding: 8px;
+		    }
+
+			.game-card {
+				width:  100%;
+				aspect-ratio: 1/1;
+			}
+
+			.game-image {
+		        object-fit: contain; /* Prevent image squishing */
+		        width: 100%;
+		        height: 100%;
+		    }
+
+		}
+
+		.gallery {
+			display: grid;
+    		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    		gap: 20px;
+    		padding: 20px;
+		}
+
+		.game-card {
+		    position: relative;
+		    width: 250px; /* Adjust as needed */
+		    height: 250px; /* Adjust as needed */
+		    overflow: hidden;
+		    border-radius: 10px;
+		}
+
+		.game-image {
+		    width: 100%;
+		    height: 100%;
+		    object-fit: contain;
+		    transition: filter 0.3s;
+		}
+
+		.game-details {
+		    position: absolute;
+		    bottom: -100%;
+		    left: 0;
+		    right: 0;
+		    background: rgba(26, 83, 92, 0.9); /* Dark teal overlay */
+		    color: #83c5be;
+		    padding: 15px;
+		    transition: bottom 0.3s ease;
+		    max-height: 60%;
+		    overflow: auto;
+		    -ms-overflow-style: none;
+		    scroll-width: none;
+		    box-sizing: border-box;
+		}
+
+		.game-details::-webkit-scrollbar {
+			display:  none;
+		}
+
+		.game-details h4{
+			font-size: 22.5;
+			color: #c2dfe3;
+			text-shadow: 
+			0 0 2px rgba(26, 83, 92, 0.8), /* Dark teal shadow for depth */
+        	1px 1px 3px #000; /* Subtle black shadow */
+		}
+
+		.game-details p {
+			font-size: 19.5px;
+			color: #d8f3dc;
+			text-shadow: 
+			0 0 2px rgba(26, 83, 92, 0.8), /* Dark teal shadow for depth */
+        	1px 1px 3px #000; /* Subtle black shadow */;
+		}
+
+		.game-card:hover .game-details {
+		    bottom: 0; /* Slides up */
+		}
+
+		.game-card:hover .game-image {
+		    filter: brightness(0.7); /* Darkens image */
+		}
+
+		.gallery {
+		    display: grid;
+		    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		    gap: 20px; /* Space between cards */
+		    padding: 20px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="section-bg bg1">
+		<!--banner-->
+		<div id="bannerimage" style="background-repeat:cover;">
+			<div class="mySlides" style="max-width:800px">
+				<center>
+					<h1><b>Adored & Archived</b></h1>
+				</center>
+			</div>
+		</div>
+		<script>
+			var slideIndex = 0;
+			carousel();
+
+			function carousel() {
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				}
+				slideIndex++;
+				if (slideIndex > x.length) {slideIndex = 1}
+					x[slideIndex-1].style.display = "block";
+				setTimeout(carousel, 2000);
+			}
+		</script>
+
+		<hr color = 90e0ef size="5%">
+		<center>
+			Little hideout that I made for my pixel lovelies aka adopted favorite characters. More to come promise (. ❛ ᴗ ❛.)
+		</center>
+		<p></p>
+	</div>
+	
+	<div class="section-bg bg2">
+		<div class="gallery">
+	    <!-- Card 1 -->
+		    <div class="game-card">
+		        <img src="BSC.JPEG" alt="Black Saphire Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Black Saphire Cookie</h3>
+		            <h4>`It's time to forget all your pains and worries!`</h4>
+		            <p>Shadow Milk Cookie's loyal follower.</p>
+		        </div>
+		    </div>
+
+		    <!-- Card 2 -->
+		    <div class="game-card">
+		        <img src="SMC.JPEG" alt="Shadow Milk Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Shadow Milk Cookie</h3>
+		            <h4>`Seriously, who can say "no" to a pinch of good old Deceit?!`</h4>
+		            <p>A malicious trickster who relishes in chaos, confusion, and inequity.<br><br>Known with the word 'So ShiNy So STORANGGG'</p>
+		        </div>
+		    </div>
+
+		    <!-- Card 3 -->
+		    <div class="game-card">
+		        <img src="AC.JPEG" alt="Affogato Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Affogato Cookie</h3>
+		            <h4>`The best medicine... tastes sweet in your mouth.`</h4>
+		            <p>A cunning and manipulative schemer, driven by an insatiable desire for power and control.</p>
+		        </div>
+		    </div>
+
+			<!--Card 4-->
+		    <div class="game-card">
+		        <img src="BPC.JPEG" alt="Black Pearl Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Black Pearl Cookie</h3>
+		            <h4>`Who dare challenge me?!`</h4>
+		            <p> Once was a kind Gem Mermaid  who harbored insecurities over her lack of special powers compared to her sisters.</p>
+		        </div>
+		    </div>
+
+		    <!--Card 5-->
+		    <div class="game-card">
+		        <img src="DCC.JPEG" alt="Dark Cacao Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Dark Cacao Cookie</h3>
+		            <h4>`Embrace the silence of the abyss!`</h4>
+		            <p>A  strict and protective monarch of the Dark Cacao Kingdom.</p>
+		        </div>
+		    </div>
+
+		    <!--Card 6-->
+		    <div class="game-card">
+		        <img src="GCC.JPEG" alt="Golden Cheese Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Golden Cheese Cookie</h3>
+		            <h4>`I am the Golden Sovereign!`</h4>
+		            <p>the glimmering founder and queen of the Golden Cheese Kingdom. <br><br>A particularly proud and ambitious hero.</p>
+		        </div>
+		    </div>
+
+		    <!--Card 7-->
+		    <div class="game-card">
+		        <img src="WLC.JPEG" alt="White Lily Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>White Lily Cookie</h3>
+		            <h4>`I wished to seek the truth...`</h4>
+		            <p>Possesses a strong desire to help and enlighten others above her own safety.</p>
+		        </div>
+		    </div>
+
+		    <!--Card 8-->
+		    <div class="game-card">
+		        <img src="CC.JPEG" alt="Clover Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Clover Cookie</h3>
+		            <h4>`May luck follow you in your adventures...`</h4>
+		            <p>A soft and enthusiastic bard who has a marvelous knack for music.</p>
+		        </div>
+		    </div>
+
+		    <!--Card 9-->
+		    <div class="game-card">
+		        <img src="TTC.JPEG" alt="Tarte Tatin Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Tarte Tatin Cookie</h3>
+		            <h4>`Stand back, I'll take care of that.`</h4>
+		            <p>An experienced, wizened dragon hunter who is very fond of and protective of Dragon City</p>
+		        </div>
+		    </div>
+
+		    <!--Card 10-->
+		    <div class="game-card">
+		        <img src="RC.JPEG" alt="Rye Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Rye Cookie</h3>
+		            <h4>`I bite hard and never let go.`</h4>
+		            <p>A skilled bounty hunter with great confidence in her marksmanship.</p>
+		        </div>
+		    </div>
+
+		    <!--Card 11-->
+		    <div class="game-card">
+		        <img src="CCC.JPEG" alt="Crimson Coral Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Crimson Coral Cookie</h3>
+		            <h4>`Gem Mermaids live to protect the kingdom.`</h4>
+		            <p>Is the committed and strict eldest sister of the Gem Mermaids Head Icon. </p>
+		        </div>
+		    </div>
+
+		    <!--Card 12-->
+		    <div class="game-card">
+		        <img src="PTC.JPEG" alt="Pitaya Dragon Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Pitaya Dragon Cookie</h3>
+		            <h4>`Ssso you want to see my true form?`</h4>
+		            <p>A gargantuan Red Dragon with flames burning hotter than brimstone and scales shining brighter than rubies.</p>
+		        </div>
+		    </div>
+
+		    <!--Card 13-->
+		    <div class="game-card">
+		        <img src="ROCKC.JPEG" alt="Rockstar Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Rockstar Cookie</h3>
+		            <h4>`Are you ready to ROCK?!`</h4>
+		            <p>A famous musician who performs his spirited songs with near effortlessness.</p>
+		        </div>
+		    </div>
+
+		    <!--Card 14-->
+		    <div class="game-card">
+		        <img src="PC.JPEG" alt="Parfait Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Parfait Cookie</h3>
+		            <h4>`Pretty toppings, sweet and lovely! I'm Parfait Cookie, and don't you forget it!`</h4>
+		            <p>Serves as a headlining performer at the Summer Soda Rock Festa.</p>
+		        </div>
+		    </div>
+
+		    <!--Card 15-->
+		    <div class="game-card">
+		        <img src="MC.JPEG" alt="Madeleine Cookie" class="game-image">
+		        <div class="game-details">
+		            <h3>Madeleine Cookie</h3>
+		            <h4>`The Divine smiles upon me!`</h4>
+		            <p>A noble paladin of the light, heir of House Madeleine, and the shining Knight Commander of the Crème Republic.</p>
+		        </div>
+		    </div>
+
+		    <!-- Add more cards as needed -->
+		</div>
+	</div>	
+</body>
+</html>
